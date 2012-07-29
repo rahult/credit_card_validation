@@ -1,14 +1,6 @@
 require "credit_card_validation/version"
 
 module CreditCardValidation
-
-  CARD_TYPES = {
-    "AMEX" => /^3[47][0-9]{13}$/,
-    "Discover" => /^6011[0-9]{12}$/,
-    "MasterCard" => /^5[1-5][0-9]{14}$/,
-    "VISA" => /^4[0-9]{12}(?:[0-9]{3})?$/
-  }
-
   class Validator
     attr_accessor :card
 
@@ -17,19 +9,43 @@ module CreditCardValidation
     end
 
     def sanitize(card)
-      self.card = card.gsub(" ", "") unless self.card.nil?
+      self.card = card.gsub(/\s/,'') unless card.nil?
     end
 
     def type
-      sanitize(card)
-      CARD_TYPES.each do |key, value|
-        return key if sanitize(card) =~ value
+      case sanitize(card)
+        when /^(34|37)\d{13}$/
+          'AMEX'
+        when /^6011\d{12}$/
+          'Discover'
+        when /^5[1-5]\d{14}$/
+          'MasterCard'
+        when /^4(\d{12}|\d{15})$/
+          'VISA'
+        else 'Unknown'
       end
-      "Unkown"
+    end
+
+    def meet_luhn_verification
+      total = sanitize(card).reverse.split(//).inject([0,0]) do |accum,number|
+        number = number.to_i
+        accum[0] += (accum[1] % 2 == 0 ? number : rotate(number * 2))
+        accum[1] += 1
+        accum
+      end
+
+      total[0] % 10 == 0
+    end
+
+    def rotate(number)
+      if number > 9
+        number = number % 10 + 1
+      end
+      number
     end
 
     def valid?
-      type != "Unkown"
+      (type != "Unkown") && meet_luhn_verification
     end
 
     def validity

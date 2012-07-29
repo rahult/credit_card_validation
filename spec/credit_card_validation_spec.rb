@@ -36,6 +36,11 @@ describe CreditCardValidation do
     end
 
     it "should respond false for a invalid card" do
+      @validator.card = "5105105105105106"
+      @validator.wont_be :valid?
+    end
+
+    it "should respond false for a invalid card" do
       @validator.card = "510510510510510"
       @validator.wont_be :valid?
     end
@@ -53,7 +58,7 @@ describe CreditCardValidation do
     end
 
     it "should respond false for a invalid card" do
-      @validator.card = "411111111111"
+      @validator.card = "4111111111111"
       @validator.wont_be :valid?
     end
   end
