@@ -1,6 +1,8 @@
+require "active_model/validations/credit_card_validator"
 require "credit_card_validation/version"
 
 module CreditCardValidation
+
   class Validator
     attr_accessor :card
 
@@ -55,7 +57,9 @@ module CreditCardValidation
     def to_s
       "#{type}: #{card}".ljust(28) + " (#{validity})"
     end
+
   end
+
 end
 
 if __FILE__==$0

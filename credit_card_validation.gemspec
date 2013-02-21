@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Rahul Trikha"]
   s.email       = ["rahul.trikha@gmail.com"]
   s.homepage    = "https://github.com/rahult/credit_card_validation"
-  s.summary     = %q{Offline Credit Card Validator}
+  s.summary     = %q{Offline Credit Card Validator written for Rails 3+ using ruby >= 1.9.2}
   s.description = %q{A credit card validation library to check offline validity of any AMEX, Discover, MasterCard, Visa cards using length and Luhn algorithm.}
 
   s.rubyforge_project = "credit_card_validation"
@@ -19,6 +19,8 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
+  s.add_dependency "activerecord", ">= 3.0.0"
+  s.add_development_dependency "sqlite3"
   s.add_development_dependency "rake"
   s.add_development_dependency "turn"
   s.add_development_dependency "growl"
