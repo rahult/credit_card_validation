@@ -74,6 +74,19 @@ describe ActiveModel::Validations::CreditCardValidator do
     end
   end
 
+  describe "validation can be added using the legacy method" do
+    it "should add validation when using legacy method" do
+      class CreditCard < ActiveRecord::Base
+        validates_credit_card :card_number
+      end
+
+      @credit_card = CreditCard.new
+      @credit_card.card_number = "411111111"
+
+      @credit_card.wont_be :valid?
+    end
+  end
+
   describe "error message can be ovewritten by using a custom message hash" do
     it "should respond with a custom a error message if message hash is passed" do
       class CreditCard < ActiveRecord::Base
