@@ -1,4 +1,4 @@
-# Credit Card Valdation
+# Credit Card Validation
 
 This gem adds the capability of validating credit cards to ActiveRecord and ActiveModel (Rails 3+) and Ruby 1.9.2+.
 
