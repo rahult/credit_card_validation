@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = CreditCardValidation::VERSION
   s.authors     = ["Rahul Trikha"]
   s.email       = ["rahul.trikha@gmail.com"]
-  s.homepage    = "https://github.com/rahult/credit_card_validation"
+  s.homepage    = "http://rahult.github.com/credit_card_validation"
   s.summary     = %q{Offline Credit Card Validator written for Rails 3+ using ruby >= 1.9.2}
   s.description = %q{A credit card validation library to check offline validity of any AMEX, Discover, MasterCard, Visa cards using length and Luhn algorithm.}
 
