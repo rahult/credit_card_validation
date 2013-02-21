@@ -16,8 +16,8 @@ This gem adds the capability of validating credit cards to ActiveRecord and Acti
       # standard validation
       validates :card_number, credit_card: true
 
-      # with custom message
-      validates :card_number, credit_card: { message: "your card number is not valid?" }
+      # with legacy syntax
+      validates_credit_card :card_number
     end
 
 #### With ActiveModel
@@ -26,8 +26,7 @@ This gem adds the capability of validating credit cards to ActiveRecord and Acti
 
       attr_accessor :card_number
 
-      # with legacy syntax (the syntax above works also)
-      validates_credit_card :card_number
+      validates :card_number, credit_card: true
     end
 
 #### I18n
