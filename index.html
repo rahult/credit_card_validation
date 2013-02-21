@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Credit card validation : Offline Credit Card Validation" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Credit card validation</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/rahult/credit_card_validation">View on GitHub</a>
+
+          <h1 id="project_title">Credit card validation</h1>
+          <h2 id="project_tagline">Offline Credit Card Validation</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/rahult/credit_card_validation/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/rahult/credit_card_validation/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Credit Card Validation</h1>
+
+<p>This gem adds the capability of validating credit cards to ActiveRecord and ActiveModel (Rails 3+) and Ruby 1.9.2+.</p>
+
+<h3>Installation</h3>
+
+<div class="highlight"><pre><span class="c1"># add this to your Gemfile</span>
+<span class="n">gem</span> <span class="s2">"credit_card_validation"</span>
+
+<span class="c1"># and run</span>
+<span class="n">bundle</span>
+</pre></div>
+
+<h3>Usage</h3>
+
+<h4>With ActiveRecord</h4>
+
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Order</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="c1"># standard validation</span>
+  <span class="n">validates</span> <span class="ss">:card_number</span><span class="p">,</span> <span class="n">credit_card</span><span class="p">:</span> <span class="kp">true</span>
+
+  <span class="c1"># with legacy syntax</span>
+  <span class="n">validates_credit_card</span> <span class="ss">:card_number</span>
+<span class="k">end</span>
+</pre></div>
+
+<h4>With ActiveModel</h4>
+
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Order</span>
+  <span class="kp">include</span> <span class="no">ActiveModel</span><span class="o">::</span><span class="no">Validations</span>
+
+  <span class="kp">attr_accessor</span> <span class="ss">:card_number</span>
+
+  <span class="n">validates</span> <span class="ss">:card_number</span><span class="p">,</span> <span class="n">credit_card</span><span class="p">:</span> <span class="kp">true</span>
+<span class="k">end</span>
+</pre></div>
+
+<h4>I18n</h4>
+
+<p>The default error message <code>is not a valid credit card</code>.
+You can pass the <code>message: "my custom error"</code> option to your validation to define your own, custom message.</p>
+
+<h2>Authors</h2>
+
+<p><strong>Rahul Trikha</strong> (<a href="http://twitter.com/rahult">http://twitter.com/rahult</a>)</p>
+
+<h2>License</h2>
+
+<p>Copyright 2013 by Rahul Trikha (<a href="http://www.rahultrikha.com">http://www.rahultrikha.com</a>) and is released under the MIT license.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Credit card validation maintained by <a href="https://github.com/rahult">rahult</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-30563163-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
