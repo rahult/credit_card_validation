@@ -3,32 +3,35 @@
 This gem adds the capability of validating credit cards to ActiveRecord and ActiveModel (Rails 3+) and Ruby 1.9.2+.
 
 ### Installation
-    # add this to your Gemfile
-    gem "credit_card_validation"
+```ruby
+# add this to your Gemfile
+gem "credit_card_validation"
 
-    # and run
-    bundle
-
+# and run
+bundle
+```
 ### Usage
 
 #### With ActiveRecord
-    class Order < ActiveRecord::Base
-      # standard validation
-      validates :card_number, credit_card: true
+```ruby
+class Order < ActiveRecord::Base
+  # standard validation
+  validates :card_number, credit_card: true
 
-      # with legacy syntax
-      validates_credit_card :card_number
-    end
-
+  # with legacy syntax
+  validates_credit_card :card_number
+end
+```
 #### With ActiveModel
-    class Order
-      include ActiveModel::Validations
+```ruby
+class Order
+  include ActiveModel::Validations
 
-      attr_accessor :card_number
+  attr_accessor :card_number
 
-      validates :card_number, credit_card: true
-    end
-
+  validates :card_number, credit_card: true
+end
+```
 #### I18n
 
 The default error message `is not a valid credit card`.
