@@ -19,8 +19,10 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  s.add_dependency "activerecord", ">= 3.0.0"
+  s.add_dependency "activemodel", ">= 3.0.0"
+  s.add_development_dependency "activerecord", ">= 3.0.0"
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "pry"
   s.add_development_dependency "rake"
   s.add_development_dependency "turn"
   s.add_development_dependency "growl"
