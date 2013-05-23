@@ -1,4 +1,4 @@
-# Credit Card Validation [![Build Status](https://travis-ci.org/rahult/credit_card_validation.png?branch=master)](https://travis-ci.org/rahult/credit_card_validation)  [![Code Climate](https://codeclimate.com/github/rahult/credit_card_validation.png)](https://codeclimate.com/github/rahult/credit_card_validation)
+# Credit Card Validation [![Build Status](https://travis-ci.org/rahult/credit_card_validation.png?branch=master)](https://travis-ci.org/rahult/credit_card_validation) [![Code Climate](https://codeclimate.com/github/rahult/credit_card_validation.png)](https://codeclimate.com/github/rahult/credit_card_validation)
 
 This gem adds the capability of validating credit cards to ActiveRecord and ActiveModel (Rails 3+) and Ruby 1.9.2+.
 
