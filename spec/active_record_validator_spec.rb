@@ -1,4 +1,4 @@
-require 'spec_helper'
+require_relative './spec_helper'
 
 class CreditCard < ActiveRecord::Base
   validates :card_number, presence: true, credit_card: true
