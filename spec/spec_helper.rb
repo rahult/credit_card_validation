@@ -1,3 +1,4 @@
+require 'minitest/autorun'
 require 'minitest/pride'
 require 'credit_card_validation'
 require 'active_record'
