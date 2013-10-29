@@ -47,7 +47,7 @@ module CreditCardValidation
     end
 
     def valid?
-      (type != "Unkown") && meet_luhn_verification
+      (type != "Unknown") && meet_luhn_verification
     end
 
     def validity
